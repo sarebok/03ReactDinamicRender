@@ -4,7 +4,7 @@ utilizando una tabla de Bootstrap. */
 import React from "react";
 import Table from "react-bootstrap/Table";
 
-const Listado = ({ datos }) => {
+const Listado = ({ datos, update }) => {
   return (
     <div className="tabla">
       <h1>Listado</h1>
@@ -23,7 +23,6 @@ const Listado = ({ datos }) => {
           {datos.map((dato) => (
             /* aqui va el bootstrap de la tabla */
             <tr key={dato.id}>
-              <td key={dato.id}>{dato.id}</td>
               <td>{dato.nombre}</td>
               <td>{dato.correo}</td>
               <td>{dato.edad}</td>

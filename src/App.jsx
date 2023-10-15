@@ -17,15 +17,24 @@ import { BaseColaboradores } from "./BaseColaboradores";
 App.jsx */
 
 function App() {
-  /* Define lo que quiero: colaboradores totales son los iniciales mas todos los que quiera añadir */
   const [colaboradores, setColaboradores] = useState(BaseColaboradores);
-  /* colaboradores=ini+new, entonces, como agregar new */
 
   const addColab = (nombre, correo, edad, cargo, telefono) => {
-    const colab = { id: Date.now(), nombre: nombre, correo: correo, edad: edad, cargo: cargo, telefono: telefono };
-    BaseColaboradores.push(colab);
-    console.log("basecolaboradores", BaseColaboradores);
+    const updateColaboradores = [...colaboradores];
+    updateColaboradores.push({
+      id: Date.now(),
+      nombre: nombre,
+      correo: correo,
+      edad: edad,
+      cargo: cargo,
+      telefono: telefono,
+    });
+    setColaboradores(updateColaboradores);
   };
+
+  /*   const updateList = (tester) => {
+    return tester ? setUpdate("yes") : setUpdate("no");
+  }; */
 
   return (
     <>
