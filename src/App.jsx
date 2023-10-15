@@ -21,8 +21,8 @@ function App() {
   const [colaboradores, setColaboradores] = useState(BaseColaboradores);
   /* colaboradores=ini+new, entonces, como agregar new */
 
-  const addColab = (nombre) => {
-    const colab = { id: Date.now(), nombre: nombre };
+  const addColab = (nombre, correo, edad, cargo, telefono) => {
+    const colab = { id: Date.now(), nombre: nombre, correo: correo, edad: edad, cargo: cargo, telefono: telefono };
     BaseColaboradores.push(colab);
     console.log("basecolaboradores", BaseColaboradores);
   };
