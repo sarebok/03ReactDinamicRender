@@ -13,6 +13,7 @@ import Formulario from "./components/Formulario";
 import Listado from "./components/Listado";
 import Alert from "./components/Alert";
 import { BaseColaboradores } from "./BaseColaboradores";
+import Buscador from "./components/Buscador";
 
 /*  Cargar la lista de colaboradores desde un archivo js e importarlos en el archivo
 App.jsx */
@@ -20,6 +21,7 @@ App.jsx */
 function App() {
   const [colaboradores, setColaboradores] = useState(BaseColaboradores);
   const [sentColab, setSentColab] = useState(false);
+  const [filteredArray, setFilteredArray] = useState(colaboradores);
   console.log("1 sentcolab: ", sentColab);
 
   const addColab = (nombre, correo, edad, cargo, telefono) => {
@@ -34,12 +36,14 @@ function App() {
     });
     setColaboradores(updateColaboradores);
     setSentColab(true);
+    setFilteredArray(updateColaboradores);
     console.log("2 sentcolab: ", sentColab);
   };
 
   return (
     <>
-      <Listado datos={colaboradores} />
+      <Buscador elementos={colaboradores} setFilteredArray={setFilteredArray} />
+      <Listado datos={filteredArray} />
       <Formulario addNewColab={addColab} />
       <Alert sentColab={sentColab} />
     </>
