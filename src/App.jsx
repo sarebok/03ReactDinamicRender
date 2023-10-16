@@ -14,7 +14,7 @@ import Buscador from "./components/Buscador";
 
 function App() {
   const [colaboradores, setColaboradores] = useState(BaseColaboradores);
-  const [sentColab, setSentColab] = useState({ sent: false, name: "" });
+  const [sentColab, setSentColab] = useState({ sent: false, name: "", trySubmit: false });
   const [filteredArray, setFilteredArray] = useState(colaboradores);
 
   return (

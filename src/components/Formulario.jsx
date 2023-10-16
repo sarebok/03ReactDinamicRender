@@ -29,11 +29,12 @@ const Formulario = ({ updateColabs, originalColabs, setSentColab, setFilteredArr
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const trySubmit = true;
     if (!name || !email || !age || !position || !phone) {
-      setSentColab(false);
+      setSentColab({ sent: false, trySubmit: trySubmit });
       return;
     }
-    setSentColab({ sent: true, name: name });
+    setSentColab({ sent: true, name: name, trySubmit: trySubmit });
     addColab(name, email, age, position, phone);
     setName("");
     setEmail("");
