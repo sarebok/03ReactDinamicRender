@@ -1,1 +1,30 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: beige;
+  max-width: 40rem;
+  border: 1px solid black;
+  border-radius: 3%;
+}
 
+.added-false {
+  color: red;
+}
+
+.added-true {
+  color: green;
+}
+.buscador-listado-container,
+.form-alert-container {
+  border-radius: 3%;
+  background-color: bisque;
+  margin: 0.5rem;
+  padding: 1rem;
+}
+
+.main-title {
+  text-align: center;
+}

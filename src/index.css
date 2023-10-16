@@ -8,3 +8,8 @@ form {
 .tabla {
   padding: 1rem;
 }
+
+#input-buscador {
+  width: 20rem;
+  margin: 1rem;
+}

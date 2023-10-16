@@ -7,7 +7,7 @@ import Table from "react-bootstrap/Table";
 const Listado = ({ datos, update }) => {
   return (
     <div className="tabla">
-      <h1>Listado</h1>
+      <h3>Listado</h3>
       <Table striped bordered hover variant="light">
         <thead>
           <tr>

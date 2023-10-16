@@ -7,8 +7,8 @@ const Buscador = ({ elementos, setFilteredArray }) => {
   };
   return (
     <div>
-      Buscar por nombre:
-      <input type="text" onChange={(e) => handleBuscador(e.target.value.toLowerCase())} />
+      <h3>Busca por nombre de colaborador</h3>
+      <input id="input-buscador" type="text" placeholder="Busca colaboradores por nombre" onChange={(e) => handleBuscador(e.target.value.toLowerCase())} />
     </div>
   );
 };

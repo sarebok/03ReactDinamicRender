@@ -39,18 +39,24 @@ const Formulario = ({ updateColabs, originalColabs, setSentColab, setFilteredArr
       telefono: telefono,
     });
     updateColabs(updateColaboradores);
-    setSentColab(true);
+
     setFilteredArray(updateColaboradores);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!name || !email || !age || !position || !phone) {
+      setSentColab(false);
+      return;
+    }
+    setSentColab(true);
     addColab(name, email, age, position, phone);
   };
   return (
     <div>
+      <h3>Ingresa los datos del colaborador a agregar</h3>
       <form onSubmit={(e) => handleSubmit(e)}>
-        <input type="text" id="name" placeholder="name" onChange={(e) => setName(e.target.value)} value={name} required />
+        <input type="text" id="name" placeholder="name" onChange={(e) => setName(e.target.value)} value={name} />
         <input type="email" id="email" placeholder="email" onChange={(e) => setEmail(e.target.value)} required />
         <input type="text" id="age" placeholder="age" onChange={(e) => setAge(e.target.value)} required />
         <input type="text" id="position" placeholder="position" onChange={(e) => setPosition(e.target.value)} required />

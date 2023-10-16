@@ -19,11 +19,17 @@ function App() {
 
   return (
     <>
-      <Buscador elementos={colaboradores} setFilteredArray={setFilteredArray} />
-      <Listado datos={filteredArray} />
-      {/* <Formulario addNewColab={addColab} /> */}
-      <Formulario originalColabs={colaboradores} updateColabs={setColaboradores} setSentColab={setSentColab} setFilteredArray={setFilteredArray} />
-      <Alert sentColab={sentColab} />
+      <div className="main-container">
+        <h1 className="main-title">Listado colaboradores</h1>
+        <div className="buscador-listado-container">
+          <Buscador elementos={colaboradores} setFilteredArray={setFilteredArray} />
+          <Listado datos={filteredArray} />
+        </div>
+        <div className="form-alert-container">
+          <Formulario originalColabs={colaboradores} updateColabs={setColaboradores} setSentColab={setSentColab} setFilteredArray={setFilteredArray} />
+          <Alert sentColab={sentColab} />
+        </div>
+      </div>
     </>
   );
 }

@@ -4,7 +4,7 @@ const Alert = ({ sentColab }) => {
   console.log("alert sentcolab", sentColab);
   return (
     <div>
-      <h1>{`${sentColab ? "Colaborador agregado!" : "Completa todos los campos"}`}</h1>
+      <h4 className={`added-${sentColab}`}>{`${sentColab ? "Colaborador agregado!" : "Completa todos los campos"}`}</h4>
     </div>
   );
 };
